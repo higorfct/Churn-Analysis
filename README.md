@@ -81,6 +81,16 @@ Todos os modelos foram treinados com `train_test_split` e avaliados de acordo co
 - Os fatores que estão relacionados com o churn são: **alto salário**, **saldo elevado (maior poder de trocar de banco)**, **poucos produtos contratados** e **score abaixo da média(insegurança para o banco, talvez?**
 ---
 
+## 💼  Impacto Financeiro do Modelo LightGBM
+
+Ao definir:
+
+- **Receita média por cliente:** R$ 100,00;
+- **Métrica utilizada:** True Positives (TP) — clientes que realmente sairiam, mas foram corretamente identificados pelo modelo;
+- **Hipótese:** todos os clientes identificados como TP são retidos com sucesso.
+
+O modelo LightGBM, mesmo com algumas métricas com valor mais baixo do que o desejado (Recall e Precision), mostrou potencial de gerar uma **economia potencial de R$ 32.600,00**
+
 ## 🧠 Conclusões
 
 O projeto mostrou como é possível usar **análise de dados e machine learning** para:
