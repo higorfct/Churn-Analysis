@@ -1,32 +1,32 @@
 # Churn Analysis
 
-# 📊 Projeto: Análise de Evasão de Clientes (Churn Analysis)
+# 📊 Project: Customer Churn Analysis
 
-## 📝 Introdução
+## 📝 Introduction
 
-Este projeto tem como objetivo identificar os principais fatores que levam à evasão de clientes (churn) em um banco com operações na Alemanha, na Espanha e na França, utilizando técnicas de machine learning e análise exploratória de dados com o intuito de formular políticas que aumentem a retenção dos clientes mais propensos a desistir dos serviços do banco e, dessa forma, minimizar o impacto financeiro gerado pelo churn.
-
----
-
-## 📊 Dados
-
-Foram utilizados dados contendo informações cadastrais e transacionais dos clientes, incluindo variáveis como **idade**, **saldo**, **salário estimado**, **produtos contratados** e se o cliente deixou ou não a instituição **(variável alvo: `Exited`)**.
-
-### Etapas realizadas:
-- Importação do dataset `Churn_treino.csv` com separador `;`
-- Análise da distribuição da evasão por **localização geográfica**, **idade** e **gênero**
-- Verificação e tratamento de valores faltantes
-- Codificação de variáveis categóricas com `LabelEncoder`
-- Padronização de variáveis numéricas com `StandardScaler`
-- Balanceamento da base utilizando **SMOTE** para lidar com desbalanceamento da variável alvo
+This project aims to identify the key factors leading to customer churn in a bank operating in Germany, Spain, and France, using data analysis and machine learning techniques.
 
 ---
 
-## 🤖 Modelagem Preditiva
+## 📊 Data
 
-Modelos aplicados:
-- Rede Neural (Keras)
-- Regressão Logística
+The data used contains customer demographic and transactional information, including variables such as **age**, **balance**, **estimated salary**, **contracted products**, and whether the customer has left the bank.
+
+### Steps performed:
+- Importation of the dataset `Churn_treino.csv` using `;` as the separator
+- Analysis of churn distribution by **geographic location**, **age**, and **gender**
+- Checking and handling of missing values
+- Encoding of categorical variables with `LabelEncoder`
+- Standardization of numerical variables with `StandardScaler`
+- Balancing the dataset using **SMOTE** to address class imbalance on the target variable
+
+---
+
+## 🤖 Predictive Modeling
+
+Applied models:
+- Neural Network (Keras)
+- Logistic Regression
 - Random Forest
 - Naive Bayes
 - SVM
@@ -35,81 +35,83 @@ Modelos aplicados:
 - KNN
 - LightGBM
 
-Todos os modelos foram treinados com `train_test_split` e avaliados de acordo com as métricas **acurácia**, **precisão**, **recall** e **F1-score**.
----
-
-## 🔍 Principais Insights
-
-- Clientes mais velhos tendem a evadir com mais frequência.
-- Clientes do país **“Germany”(Alemanha)** apresentaram maior taxa de evasão.
-- Mulheres tiveram uma leve tendência maior à evasão em comparação às mulheres.
-- A variável "Saldo" (balance) sozinha não é suficiente para prever churn, mas combinada com idade e número de produtos, aumenta seu poder preditivo.
-- O modelo **XGBoost** foi o que apresentou melhor desempenho entre os algoritmos testados.
+All models were trained using `train_test_split` and evaluated according to the metrics **accuracy**, **precision**, **recall**, and **F1-score**.
 
 ---
 
-## 📈 Visualizações
+## 🔍 Key Insights
 
-- Gráfico de barras da evasão por localização (`Geography`)
-- Histograma de idade com estratificação por churn
-- Gráfico de barras do churn por gênero
-- Matriz de confusão dos principais modelos
-- Gráfico de comparação de métricas dos modelos
-- Explicações locais com LIME para os resultados do modelo XGBoost
-
----
-
-## 🛠️ Ferramentas Utilizadas
-
-- **Python** – Linguagem principal  
-- **Pandas** – Manipulação e análise de dados  
-- **Seaborn / Matplotlib** – Visualização gráfica  
-- **Scikit-learn** – Modelagem preditiva e métricas  
-- **Keras / TensorFlow** – Construção de rede neural  
-- **XGBoost / LightGBM** – Modelos de boosting  
-- **LIME** – Explicabilidade dos modelos  
-- **Imbalanced-learn (SMOTE)** – Balanceamento de classes  
-- **Jupyter Notebook** – Ambiente de desenvolvimento  
+- Older customers tend to churn more frequently.
+- Customers from **Germany** showed the highest churn rate.
+- Women showed a slightly higher tendency to churn compared to men.
+- The "Balance" variable alone is not sufficient to predict churn, but combined with age and number of products, its predictive power increases.
+- The **XGBoost** model showed the best performance among the tested algorithms.
 
 ---
 
-## ✅ Resultados
+## 📈 Visualizations
 
-- O modelo **LightGBM** apresentou as melhores métricas. No entanto, apesar de ter excedido os outros modelos a esse respeito, métricas como **F1-Score** e **recall** se mostraram bem baixas, sendo de **60%** e **52%**, respectivamente, mesmo com a utilização de SMOTE para balanceamento de classes. 
-- Foi utilizada a técnica LIME de IA Explicável para desvendar os fatores que contribuem ou não para o churn de clientes.
-- Os fatores que reduzem o risco de churn são: **idade(mais jovem = menor risco)**, **tempo como cliente** e **engajamento como membro ativo**.
-- Os fatores que estão relacionados com o churn são: **alto salário**, **saldo elevado (maior poder de trocar de banco)**, **poucos produtos contratados** e **score abaixo da média(insegurança para o banco, talvez?**
----
-
-## 💼  Impacto Financeiro do Modelo LightGBM
-
-Ao definir:
-
-- **Receita média por cliente:** R$ 100,00;
-- **Métrica utilizada:** True Positives (TP) — clientes que realmente sairiam, mas foram corretamente identificados pelo modelo;
-- **Hipótese:** todos os clientes identificados como TP são retidos com sucesso.
-
-O modelo LightGBM, mesmo com algumas métricas com valor mais baixo do que o desejado (Recall e Precision), mostrou potencial de gerar uma **economia potencial de R$ 32.600,00**
-
-## 🧠 Conclusões
-
-O projeto mostrou como é possível usar **análise de dados e machine learning** para:
-
-- Identificar perfis com maior propensão à evasão
-- Aplicar técnicas de balanceamento de dados para melhorar a qualidade do modelo
-- Avaliar diferentes algoritmos para encontrar o mais adequado ao problema
-- Utilizar ferramentas como **LIME** para interpretar decisões de modelos complexos
+- Bar chart of churn by location (`Geography`)
+- Age histogram stratified by churn
+- Bar chart of churn by gender
+- Confusion matrix of the main models
+- Metrics comparison chart for the models
+- Local explanations with LIME for XGBoost model results
 
 ---
 
-## 🔄 Próximos Passos
+## 🛠️ Tools Used
 
-- Implementar modelos em ambiente de produção com monitoramento contínuo
-- Realizar tuning avançado de hiperparâmetros via **GridSearch**, **RandomSearch** ou **Bayesian Optimizer** para encontrar melhores métricas **F1-Score** e **Recall**, visto que quando tais métricas estão baixas, acaba-se deixando passar falsos positivos e negativos, o que pode representar altos prejuízos financeiros para a instituição.
+- **Python** – Main programming language  
+- **Pandas** – Data manipulation and analysis  
+- **Seaborn / Matplotlib** – Graphical visualization  
+- **Scikit-learn** – Predictive modeling and metrics  
+- **Keras / TensorFlow** – Neural network construction  
+- **XGBoost / LightGBM** – Boosting models  
+- **LIME** – Model explainability  
+- **Imbalanced-learn (SMOTE)** – Class balancing  
+- **Jupyter Notebook** – Development environment  
 
 ---
 
-🧑‍💻 **Autor e Contato**
+## ✅ Results
+
+- The **LightGBM** model achieved the best metrics. However, despite outperforming the other models in this respect, metrics such as **F1-Score** and **recall** were still quite low, indicating difficulty in identifying actual churners.
+- The LIME explainable AI technique was used to uncover factors that contribute or not to customer churn.
+- Factors that reduce churn risk are: **age (younger = lower risk)**, **time as a customer**, and **engagement as an active member**.
+- Factors related to churn are: **high salary**, **high balance (greater ability to switch banks)**, **few contracted products**, and **below-average score (perceived insecurity)**.
+
+---
+
+## 💼 Financial Impact of the LightGBM Model
+
+Defining:
+
+- **Average revenue per customer:** R$ 100.00;
+- **Metric used:** True Positives (TP) — customers who would actually leave but were correctly identified by the model;
+- **Hypothesis:** all customers identified as TP are successfully retained.
+
+The LightGBM model, even with some metrics lower than desired (Recall and Precision), showed potential to generate a **potential savings of R$ 32,600.00**
+
+## 🧠 Conclusions
+
+The project demonstrated how it is possible to use **data analysis and machine learning** to:
+
+- Identify profiles with higher propensity to churn;
+- Apply data balancing techniques to improve model quality;
+- Assess different algorithms to find the most suitable for the problem;
+- Use tools like **LIME** to interpret decisions from complex models.
+
+---
+
+## 🔄 Next Steps
+
+- Deploy models to a production environment with continuous monitoring.
+- Perform advanced hyperparameter tuning using **GridSearch**, **RandomSearch**, or **Bayesian Optimizer** to find better **F1-Score** and **Recall** metrics, since when these metrics are low, many churners are not detected.
+
+---
+
+🧑‍💻 **Author and Contact**
 
 **Higor Roberto Coutinho Caetano**  
 **LinkedIn**: [https://www.linkedin.com/in/higor-caetano-049521136/](https://www.linkedin.com/in/higor-caetano-049521136/)  
