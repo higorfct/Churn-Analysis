@@ -1,0 +1,5 @@
+# Handle line endings automatically
+* text=auto
+
+# Treat notebooks as JSON for diff
+*.ipynb diff=jupyternotebook
