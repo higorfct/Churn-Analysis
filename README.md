@@ -1,11 +1,22 @@
 # Churn Analysis
 
+
 # 📊 Project: Customer Churn Analysis
 
 ## 📝 Introduction
 
 This project aims to identify the key factors leading to customer churn in a bank operating in Germany, Spain, and France, using data analysis and machine learning techniques.
 
+---
+
+## 🚀 How to use
+
+1. **Clone the repository and install dependencies:**
+    ```bash
+    git clone https://github.com/higorfct/Churn-Analysis
+    cd Churn=Analysis
+    pip install -r requirements.txt
+    ```
 ---
 
 ## 📊 Data
