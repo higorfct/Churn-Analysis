@@ -87,11 +87,11 @@ All models were trained using `train_test_split` and evaluated according to the 
 
 Defining:
 
-- **Average revenue per customer:** R$ 100.00;
+- **Average revenue per customer:** €$ 100.00;
 - **Metric used:** True Positives (TP) — customers who would actually leave but were correctly identified by the model;
 - **Hypothesis:** all customers identified as TP are successfully retained.
 
-The LightGBM model, even with some metrics lower than desired (Recall and Precision), showed potential to generate a **potential savings of R$ 32,600.00**
+The LightGBM model, even with some metrics lower than desired (Recall and Precision), showed potential to generate a **potential savings of €$ 32,600.00**
 
 ## 🧠 Conclusions
 
