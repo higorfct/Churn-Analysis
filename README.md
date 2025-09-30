@@ -15,7 +15,8 @@ The data used contains customer demographic and transactional information, inclu
 ### Steps performed:
 - Importation of the dataset `Churn_treino.csv` using `;` as the separator
 - Analysis of churn distribution by **geographic location**, **age**, and **gender**
-- Checking and handling of missing values
+- Checking for outliers
+- Checking for missing values
 - Encoding of categorical variables with `LabelEncoder`
 - Standardization of numerical variables with `StandardScaler`
 - Balancing the dataset using **SMOTE** to address class imbalance on the target variable
